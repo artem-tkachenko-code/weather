@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/e3f536191e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+
+<body>
+    <main>
+        <header class="header" id="head">
+            <h1 class="logo">Weather.UA</h1>
+            <div class="header__nav">
+                <div class="hamburgerMenu">
+                    <input id="menu__toggle" type="checkbox">
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+                    <ul class="nav">
+                        <li><a class="nav__link" href="#">Главная</a></li>
+                        <li><a class="nav__link" href="#">Карта</a></li>
+                        <li><a class="nav__link" href="#">Новости</a></li>
+                        <li><a class="nav__link" href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <a class="header__button" href="#">Get app</a>
+            </div>
+        </header>
+        <div class="mainBlock">
+            <div class="left__block">
+                <h1 class="left__title">Не забудь узнать погоду!</h1>
+                <p class="left__subtitle">Точный прогноз погоды в любом городе Украины. Теперь не нужно беспокоиться о
+                    планах на день</p>
+                <div class="main__search">
+                    <div class="search__IMG">
+                        <img src="image/Vector.png">
+                    </div>
+                    <form name="cityForm">
+                        <input class="search__input" name="city" value="Kyiv"></input>
+                        <button class="search__button" onclick="getCityWeather ()" type="button">Поиск</button>
+                    </form>
+                </div>
+            </div>
+            <div class="rightBlock">
+                <img class="weather__IMG" src="image/weather_img1.png" alt="weather_img">
+                <div class="up__block">
+                    <div class="up__leftBlock">
+                        <div class="up__city" id="upCity">
+                            <!-- <script>document.write(cityName);</script> -->
+                        </div>
+                        <div class="up__date" id="upDate">
+                        </div>
+                    </div>
+                    <div class="up__rightBlock" id="infoTemp">
+                    </div>
+                </div>
+                <div class="bottom__block">
+                    <div class="bottom__infoBlock">
+                        <img src="image/rain.png" alt="rain" class="bottom__Icon">
+                        <div class="weatherInfo" id="infoRain"></div>
+                    </div>
+                    <div class="bottom__infoBlock">
+                        <img src="image/wind.png" alt="wind" class="bottom__Icon">
+                        <div class="weatherInfo" id="infoWind"></div>
+                    </div>
+                    <div class="bottom__infoBlock">
+                        <img src="image/pressure.png" alt="pressure" class="bottom__Icon">
+                        <div class="weatherInfo" id="infoPressure"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="appBlock">
+            <div class="app__leftBlock">
+                <h1 class="app__leftTitle">Прогноз погоды всегда под рукой!</h1>
+                <p class="app__leftSubtitle">Точный прогноз погоды в любом городе Украины. Теперь не нужно беспокоиться
+                    о
+                    планах на день</p>
+                <a href="#"><img src="image/google-play.png" alt="gp"></a>
+            </div>
+            <div class="app__rightBlock">
+                <i class="fas fa-chevron-left" id="prevBtn"></i>
+                <div class="app__picContainer">
+                    <div class="app__picture">
+                        <img class="app__IMG" src="image/app3.png" id="lastClone" alt="app3">
+                        <img class="app__IMG" src="image/app1.png" alt="app1">
+                        <img class="app__IMG" src="image/app2.png" alt="app2">
+                        <img class="app__IMG" src="image/app3.png" alt="app3">
+                        <img class="app__IMG" src="image/app1.png" id="firstClone" alt="app1">
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right" id="nextBtn"></i>
+            </div>
+        </div>
+    </main>
+    <section class="QNA">
+        <p class="QNA__title">Частозадаваемые вопросы</p>
+        <div class="QNA__acc">
+
+            <button class="acc__title">
+                <p>Какая цена?</p>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="acc__panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam tellus sit amet mauris
+                    ullamcorper facilisis. Duis porttitor neque eu sapien pharetra fringilla. Ut ac ante eget diam
+                    cursus
+                    vehicula.</p>
+            </div>
+            <hr>
+            <button class="acc__title">
+                <p>Какая цена?</p>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="acc__panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam tellus sit amet mauris
+                    ullamcorper facilisis. Duis porttitor neque eu sapien pharetra fringilla. Ut ac ante eget diam
+                    cursus
+                    vehicula.</p>
+            </div>
+            <hr>
+            <button class="acc__title">
+                <p>Какая цена?</p>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="acc__panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam tellus sit amet mauris
+                    ullamcorper facilisis. Duis porttitor neque eu sapien pharetra fringilla. Ut ac ante eget diam
+                    cursus
+                    vehicula.</p>
+            </div>
+            <hr>
+            <button class="acc__title">
+                <p>Какая цена?</p>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="acc__panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam tellus sit amet mauris
+                    ullamcorper facilisis. Duis porttitor neque eu sapien pharetra fringilla. Ut ac ante eget diam
+                    cursus
+                    vehicula.</p>
+            </div>
+            <hr>
+        </div>
+
+    </section>
+    <footer>
+        <div>
+            <a href="#" class="footer_text">Условия использования</a>
+        </div>
+        <div class="footerContact">
+            <a href="#" class="footer__button"><img src="image/telegram.png" alt="tg"></a>
+            <a href="#" class="footer__button"><img src="image/viber.png" alt="vb"></a>
+            <a href="#" class="footer__button"><img src="image/phone.png" alt="ph"></a>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
