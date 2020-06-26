@@ -1,11 +1,8 @@
 let acc = document.getElementsByClassName("acc__title");
 
-console.log(acc);
-
 let i;
 
 for (i = 0; i < acc.length; i++) {
-    console.log(i);
     acc[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
@@ -88,20 +85,16 @@ function getCityWeather () {
     let xhr = new XMLHttpRequest();
 
     xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=" + document.forms.cityForm.city.value + "&appid=c050cb7859d45c5d5fd7e8e59faab620");
-console.log(xhr);
 
 xhr.send()
 xhr.onload = function () {
 
-// cityName = xhr.response.name;
 cityWeather = JSON.parse(xhr.response);
 cityName = cityWeather.name;
 cityRain = cityWeather.main.humidity + "%"
 cityWind = cityWeather.wind.speed + "м/с"
 cityPressure = cityWeather.main.pressure + "hPa"
 cityTemp = Math.round(cityWeather.main.temp-273) + "°C"
-console.log(cityWeather);
-console.log(cityName);
 
 let options = {
     month: 'numeric',
