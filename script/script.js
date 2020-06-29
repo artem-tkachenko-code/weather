@@ -71,8 +71,8 @@ carouselSlide.addEventListener('transitionend', () => {
 });
 
 
-let cityName 
-let cityDate = new Date ()
+let cityName
+let cityDate = new Date()
 let cityWeather
 let cityRain
 let cityWind
@@ -81,67 +81,67 @@ let cityTemp
 
 
 
-function getCityWeather () {
+function getCityWeather() {
     let xhr = new XMLHttpRequest();
 
     xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=" + document.forms.cityForm.city.value + "&appid=c050cb7859d45c5d5fd7e8e59faab620");
 
-xhr.send()
-xhr.onload = function () {
+    xhr.send()
+    xhr.onload = function () {
 
-cityWeather = JSON.parse(xhr.response);
-cityName = cityWeather.name;
-cityRain = cityWeather.main.humidity + "%"
-cityWind = cityWeather.wind.speed + "м/с"
-cityPressure = cityWeather.main.pressure + "hPa"
-cityTemp = Math.round(cityWeather.main.temp-273) + "°C"
+        cityWeather = JSON.parse(xhr.response);
+        cityName = cityWeather.name;
+        cityRain = cityWeather.main.humidity + "%"
+        cityWind = cityWeather.wind.speed + "м/с"
+        cityPressure = cityWeather.main.pressure + "hPa"
+        cityTemp = Math.round(cityWeather.main.temp - 273) + "°C"
 
-let options = {
-    month: 'numeric',
-    day: 'numeric',
-    weekday: 'long',
-  };
+        let options = {
+            month: 'numeric',
+            day: 'numeric',
+            weekday: 'long',
+        };
 
-document.getElementById('upCity').innerHTML = cityName;
-document.getElementById('upDate').innerHTML = cityDate.toLocaleString ("ru", options);
-document.getElementById('infoRain').innerHTML = cityRain;
-document.getElementById('infoWind').innerHTML = cityWind;
-document.getElementById('infoPressure').innerHTML = cityPressure;
-document.getElementById('infoTemp').innerHTML = cityTemp;
+        document.getElementById('upCity').innerHTML = cityName;
+        document.getElementById('upDate').innerHTML = cityDate.toLocaleString("ru", options);
+        document.getElementById('infoRain').innerHTML = cityRain;
+        document.getElementById('infoWind').innerHTML = cityWind;
+        document.getElementById('infoPressure').innerHTML = cityPressure;
+        document.getElementById('infoTemp').innerHTML = cityTemp;
 
-    JSON.parse(xhr.response);
-    
-};
+        JSON.parse(xhr.response);
+
+    };
 }
 
-getCityWeather ()
+getCityWeather()
 
 
-window.onscroll = function() {myFunction(), onScroll()};
+window.onscroll = function () { myFunction(), onScroll() };
 
 var header = document.getElementById("head");
 var fixed = header.offsetTop;
 
 function myFunction() {
-  if (window.pageYOffset > fixed) {      
-    header.classList.add("fixed");
-  } else {
-    header.classList.remove("fixed");
-  }
+    if (window.pageYOffset > fixed) {
+        header.classList.add("fixed");
+    } else {
+        header.classList.remove("fixed");
+    }
 }
 
 var lastScrollTop = 0;
 
-function onScroll () {
-  var top = window.pageYOffset;
-  if (lastScrollTop > top) {
-    header.style.visibility = "visible";
-    header.style.opacity = "1";
-    header.style.backgroundColor = "#39caebd7"
+function onScroll() {
+    var top = window.pageYOffset;
+    if (lastScrollTop > top) {
+        header.style.visibility = "visible";
+        header.style.opacity = "1";
+        header.style.backgroundColor = "#39caebd7"
 
-  } else if (lastScrollTop < top) {
-    header.style.visibility = "hidden";
-    header.style.opacity = "0";
-  }
-  lastScrollTop = top;
+    } else if (lastScrollTop < top) {
+        header.style.visibility = "hidden";
+        header.style.opacity = "0";
+    }
+    lastScrollTop = top;
 }
