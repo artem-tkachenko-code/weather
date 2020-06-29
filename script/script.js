@@ -22,9 +22,9 @@ let toggle = document.getElementById('menu__toggle');
 
 toggle.addEventListener('change', function () {
     if (this.checked) {
-        head.style.marginBottom = '60px'
+        head.style.height = '120px'
     } else {
-        head.style.marginBottom = '30px'
+        head.style.height = '80px'
     }
 })
 
@@ -117,3 +117,31 @@ document.getElementById('infoTemp').innerHTML = cityTemp;
 getCityWeather ()
 
 
+window.onscroll = function() {myFunction(), onScroll()};
+
+var header = document.getElementById("head");
+var fixed = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > fixed) {      
+    header.classList.add("fixed");
+  } else {
+    header.classList.remove("fixed");
+  }
+}
+
+var lastScrollTop = 0;
+
+function onScroll () {
+  var top = window.pageYOffset;
+  if (lastScrollTop > top) {
+    header.style.visibility = "visible";
+    header.style.opacity = "1";
+    header.style.backgroundColor = "#39caebd7"
+
+  } else if (lastScrollTop < top) {
+    header.style.visibility = "hidden";
+    header.style.opacity = "0";
+  }
+  lastScrollTop = top;
+}

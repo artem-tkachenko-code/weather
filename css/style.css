@@ -21,22 +21,28 @@ main {
           align-items: center;
   width: 100%;
   min-height: 100vh;
+  padding-top: 150px;
   background: -webkit-gradient(linear, left top, left bottom, from(#39CBEB), to(#5C31E9));
   background: linear-gradient(180deg, #39CBEB 0%, #5C31E9 100%);
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
 }
 
 main .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
   height: 125px;
-  width: 63%;
+  width: 100%;
   min-width: 960px;
   margin-bottom: 30px;
   -webkit-transition: .3s linear;
@@ -153,6 +159,25 @@ main .header .header__button:active {
   transition: none;
 }
 
+main .fixed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: fixed;
+  background-color: #39caebd7;
+  top: 0px;
+  height: 60px;
+  width: 100%;
+  min-width: 960px;
+  margin-bottom: 30px;
+  z-index: 10000;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+
 main .mainBlock {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -248,7 +273,9 @@ main .mainBlock .left__block .main__search .search__input {
   font-size: 24px;
 }
 
-main .mainBlock .left__block .main__search .search__input :active, main .mainBlock .left__block .main__search .search__input :hover, main .mainBlock .left__block .main__search .search__input :focus {
+main .mainBlock .left__block .main__search .search__input :active,
+main .mainBlock .left__block .main__search .search__input :hover,
+main .mainBlock .left__block .main__search .search__input :focus {
   outline: 0;
   outline-offset: 0;
 }
@@ -613,11 +640,23 @@ footer .footerContact .footer__button:hover {
 }
 
 @media screen and (max-width: 425px) {
+  main {
+    padding-top: 105px;
+  }
   main .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    position: fixed;
     width: 100%;
     min-width: 100%;
-    position: relative;
     padding: 0 16px;
+    height: 80px;
+    z-index: 1001;
+    top: 0;
+    left: 0;
   }
   main .header .logo {
     font-size: 22px;
@@ -637,9 +676,10 @@ footer .footerContact .footer__button:hover {
     display: flex;
   }
   main .header .header__nav .hamburgerMenu .nav {
+    visibility: hidden;
     opacity: 0;
     position: absolute;
-    bottom: 0px;
+    bottom: 10px;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -671,10 +711,27 @@ footer .footerContact .footer__button:hover {
             transform: rotate(90deg);
   }
   main .header .header__nav .hamburgerMenu #menu__toggle:checked ~ .nav {
+    visibility: visible;
     opacity: 1;
   }
   main .header .header__nav .header__button {
     margin-right: 20px;
+  }
+  main .fixed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    position: fixed;
+    background-color: transparent;
+    top: 0px;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 30px;
+    z-index: 10000;
+    -webkit-transition: .3s linear;
+    transition: .3s linear;
   }
   main .mainBlock {
     display: -webkit-box;
@@ -686,7 +743,7 @@ footer .footerContact .footer__button:hover {
             flex-direction: column-reverse;
     min-width: 100%;
     width: 100%;
-    margin: 0;
+    margin: 20px 0 0;
   }
   main .mainBlock .left__block {
     width: 100%;
