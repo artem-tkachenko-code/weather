@@ -15,7 +15,7 @@
         <header class="header" id="head">
             <h1 class="logo">Weather.UA</h1>
             <div class="header__nav">
-                <div class="hamburgerMenu">
+                <div class="hamburger__menu">
                     <input id="menu__toggle" type="checkbox">
                     <label class="menu__btn" for="menu__toggle">
                         <span></span>
@@ -30,7 +30,7 @@
                 <a class="header__button" href="#">Get app</a>
             </div>
         </header>
-        <div class="mainBlock">
+        <div class="main__block">
             <div class="left__block">
                 <h1 class="left__title">Не забудь узнать погоду!</h1>
                 <p class="left__subtitle">Точный прогноз погоды в любом городе Украины. Теперь не нужно беспокоиться о
@@ -39,51 +39,65 @@
                     <div class="search__IMG">
                         <img src="image/Vector.png">
                     </div>
-                    <form name="cityForm">
+                    <form name="city__form">
                         <input class="search__input" name="city" value="Kyiv"></input>
                         <button class="search__button" onclick="getCityWeather ()" type="button">Поиск</button>
                     </form>
                 </div>
             </div>
-            <div class="rightBlock">
+            <div class="right__block">
                 <img class="weather__IMG" src="image/weather_img1.png" alt="weather_img">
                 <div class="up__block">
-                    <div class="up__leftBlock">
+                    <div class="up__left__block">
                         <div class="up__city" id="upCity">
                         </div>
                         <div class="up__date" id="upDate">
                         </div>
                     </div>
-                    <div class="up__rightBlock" id="infoTemp">
+                    <div class="up__right__block" id="infoTemp">
                     </div>
                 </div>
                 <div class="bottom__block">
-                    <div class="bottom__infoBlock">
-                        <img src="image/rain.png" alt="rain" class="bottom__Icon">
-                        <div class="weatherInfo" id="infoRain"></div>
+                    <div class="bottom__info__block">
+                        <img src="image/rain.png" alt="rain" class="bottom__icon">
+                        <div class="weather__info" id="infoRain"></div>
                     </div>
-                    <div class="bottom__infoBlock">
-                        <img src="image/wind.png" alt="wind" class="bottom__Icon">
-                        <div class="weatherInfo" id="infoWind"></div>
+                    <div class="bottom__info__block">
+                        <img src="image/wind.png" alt="wind" class="bottom__icon">
+                        <div class="weather__info" id="infoWind"></div>
                     </div>
-                    <div class="bottom__infoBlock">
-                        <img src="image/pressure.png" alt="pressure" class="bottom__Icon">
-                        <div class="weatherInfo" id="infoPressure"></div>
+                    <div class="bottom__info__block">
+                        <img src="image/pressure.png" alt="pressure" class="bottom__icon">
+                        <div class="weather__info" id="infoPressure"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="appBlock">
-            <div class="app__leftBlock">
-                <h1 class="app__leftTitle">Прогноз погоды всегда под рукой!</h1>
-                <p class="app__leftSubtitle">Точный прогноз погоды в любом городе Украины. Теперь не нужно беспокоиться
+        <div class="app__block">
+            <div class="app__left__block">
+                <h1 class="app__left__title">Прогноз погоды всегда под рукой!</h1>
+                <p class="app__left__subtitle">Точный прогноз погоды в любом городе Украины. Теперь не нужно
+                    беспокоиться
                     о
                     планах на день</p>
                 <a href="#"><img src="image/google-play.png" alt="gp"></a>
             </div>
-            <div class="app__rightBlock">
+            <div class="app__right__block__cards">
+                <img class="app__IMG" src="image/app1.png" alt="app1">
+                <img class="app__IMG" src="image/app2.png" alt="app2">
+                <img class="app__IMG" src="image/app3.png" alt="app3">
+            </div>
+            <div class="app__right__block__slider">
+                <div class="app__step">
+                    <div class="app__step__dot">
+                    </div>
+                    <div class="app__step__dot">
+                    </div>
+                    <div class="app__step__dot">
+                    </div>
+                </div>
                 <i class="fas fa-chevron-left" id="prevBtn"></i>
-                <div class="app__picContainer">
+                <div class="app__pic__container">
                     <div class="app__picture">
                         <img class="app__IMG" src="image/app3.png" id="lastClone" alt="app3">
                         <img class="app__IMG" src="image/app1.png" alt="app1">
