@@ -30,6 +30,9 @@ toggle.addEventListener("change", function () {
 
 //
 
+let step = 0;
+let circles = document.querySelectorAll(".app__step__dot");
+
 const carouselSlide = document.querySelector(".app__picture");
 const carouselImages = document.querySelectorAll(".app__pic__container img");
 
@@ -39,7 +42,7 @@ const nextBtn = document.querySelector("#nextBtn");
 let counter = 1;
 const size = carouselImages[0].clientWidth;
 
-carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+carousel();
 
 nextBtn.addEventListener("click", () => {
   if (counter >= carouselImages.length - 1) return;
@@ -69,13 +72,6 @@ carouselSlide.addEventListener("transitionend", () => {
     carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
   }
 });
-
-let step = 0;
-let circles = document.querySelectorAll(".app__step__dot");
-
-circles[0].style.backgroundColor = "rgb(57, 96, 183)";
-circles[0].style.width = "7px";
-circles[0].style.height = "7px";
 
 function nextStep() {
   if (step < 2) {
@@ -115,6 +111,19 @@ function prevStep() {
     circles[step].style.width = "7px";
     circles[step].style.height = "7px";
   }
+}
+
+document.getElementsByTagName("BODY")[0].onresize = function () {
+  carousel();
+};
+
+function carousel() {
+
+  carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+
+  circles[step].style.backgroundColor = "rgb(57, 96, 183)";
+  circles[step].style.width = "7px";
+  circles[step].style.height = "7px";
 }
 
 //
